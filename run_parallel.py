@@ -1,8 +1,8 @@
 #Code author: Vivien Fisch-Romito
-#Date of modification: 20/02/23
+#Date of modification: 01/11/2023
 
 '''
-Basic function to run in parallel
+Main script to launch in parallel different hindcasting runs
 '''
 
 #import packages & library
