@@ -1,9 +1,8 @@
-#Code author: Vivien Fisch-Romito
-#Date of modification: 01/11/2023
+#Code author: Vivien Fisch-Romito, University of Geneva
+#Conceptualization : Vivien Fisch-Romito, Evelina Trutnevyte, University of Geneva
+#Date of modification: 14/12/23
+#Description : Main script to launch in parallel different hindcasting runs
 
-'''
-Main script to launch in parallel different hindcasting runs
-'''
 
 #import packages & library
 import os
