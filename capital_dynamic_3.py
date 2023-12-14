@@ -1,5 +1,5 @@
 #Code author: Vivien Fisch-Romito, University of Geneva
-#Conceptualization : Vivien Fisch-Romito, Evelina Trutnevyte
+#Conceptualization : Vivien Fisch-Romito, Evelina Trutnevyte, University of Geneva
 #Date of modification: 14/12/23
 #
 
