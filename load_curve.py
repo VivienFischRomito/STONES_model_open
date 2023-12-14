@@ -1,5 +1,6 @@
 #Code author: Vivien Fisch-Romito, University of Geneva
-#Date of modification: 20/02/23
+#Conceptualization : Vivien Fisch-Romito, Evelina Trutnevyte, University of Geneva
+#Date of modification: 14/12/23
 #Description: This module of the STONES model is used to build the load duration curves for the observed year and the expected one in the future
 
 import os
