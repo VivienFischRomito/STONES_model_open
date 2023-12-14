@@ -1,7 +1,7 @@
 #Code author: Vivien Fisch-Romito, University of Geneva
-#Date of modification: 20/02/23
-#Description: This module of the STONES model is used for electricity dispatch over the year observed by minimizing variable costs
-
+#Conceptualization : Vivien Fisch-Romito, Evelina Trutnevyte, University of Geneva
+#Date of modification: 14/12/23
+#
 
 import numpy as np
 import pandas as pd
