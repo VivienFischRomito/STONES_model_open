@@ -1,8 +1,9 @@
+#File name : load_curve.py
 #Code author: Vivien Fisch-Romito, University of Geneva
 #Conceptualization : Vivien Fisch-Romito, Evelina Trutnevyte, University of Geneva
 #Date of modification: 14/12/23
-#Description: This module of the STONES model is used to build the load duration curves for the observed year and the expected one in the future
-
+#Description: The electricity demand curve module allows to obtain hourly electricity demand values for the observed year y to feed the dispatch module, and for the year y+5 to feed 
+#the capacity expansion module. It used as inputs the load duration curves (hourly electricity demand profiles) for the year observed (or for the closest available one if not available)
 import os
 import numpy as np
 import pandas as pd
