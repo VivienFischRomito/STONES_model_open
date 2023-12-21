@@ -1,7 +1,8 @@
 #Code author: Vivien Fisch-Romito, University of Geneva
 #Conceptualization : Vivien Fisch-Romito, Evelina Trutnevyte, University of Geneva
 #Date of modification: 14/12/23
-#
+#The dispatch module determines the system-wide cost-optimal dispatch by minimizing the sum of variable costs for all technologies 
+#while satisfying hourly electricity demand constraints over the six representative days obtained from the electricity demand module.
 
 import numpy as np
 import pandas as pd
