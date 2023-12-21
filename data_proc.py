@@ -1,7 +1,8 @@
+#File name : data_proc.py
 #Code author: Vivien Fisch-Romito, University of Geneva
 #Conceptualization : Vivien Fisch-Romito, Evelina Trutnevyte, University of Geneva
 #Date of modification: 14/12/23
-#
+#Description : Importing and formatting input data
 
 
 # import packages & library
