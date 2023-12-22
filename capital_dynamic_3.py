@@ -1,7 +1,9 @@
+#File name: capacity_dynamic.py
 #Code author: Vivien Fisch-Romito, University of Geneva
-#Conceptualization : Vivien Fisch-Romito, Evelina Trutnevyte, University of Geneva
+#Conceptualization: Vivien Fisch-Romito, Evelina Trutnevyte, University of Geneva
 #Date of modification: 14/12/23
-#
+#Description: The capacity dynamic module determines the evolution of installed power capacity to satisfy 
+#the projected electricity demand five years later. 
 
 
 import numpy as np
