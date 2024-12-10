@@ -19,7 +19,6 @@ def main(name):
     plots_path = output_path + '/plots'
     
     creat_path(output_path)
-    creat_path(output_path + '/Real_world')
     creat_path(output_path + '/Scenario')
     creat_path(plots_path)
     

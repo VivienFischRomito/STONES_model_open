@@ -12,18 +12,25 @@ import pandas as pd
 import filepath  #module created
 import load_curve #module created
 import dispatch #module created
-import capital_dynamic_3 #module created
+import capital_dynamic #module created
 import data_proc # module created
 from IPython.display import clear_output
 import sys
 from multiprocessing import Pool
+import warnings 
+  
+warnings.filterwarnings("ignore")
 
+
+
+# error callback function
+def callback(error):
+    print(f'{error}', flush=True)
 
 
 def run_country(country):
-    
+
     try: 
-    
         study_frame=pd.read_excel('study_frame.xlsx',
                             header=0)
         
@@ -51,7 +58,7 @@ def run_country(country):
         
     
         
-        for s in range (0,64):    
+        for s in [3]: #range (0,64):    
             print('new run is ' + country + str(s))
             
             #Run conditions
@@ -147,7 +154,7 @@ def run_country(country):
 
                 print('capital_investments')
                 if y<2019 : 
-                    capital_dynamic_3.main(y, 
+                    capital_dynamic.main(y, 
                                         country, 
                                         country_data, 
                                         elec_data,
@@ -176,7 +183,6 @@ def run_country(country):
             output_data.to_csv(output_path + '/Scenario/' + country + '/' + str(s)+'/'+'output_data.csv')  
             charge_data.to_csv(output_path + '/Scenario/' + country + '/' + str(s)+'/'+'charge_data.csv')  
             export_data.to_csv(output_path + '/Scenario/' + country + '/' + str(s)+'/'+'export_data.csv')  
-            #accuracy_indicators.to_csv(output_path + '/Scenario/' + country + '/' + str(s)+'/'+'accuracy_indicators.csv')  
             
             #os.system('clear')
             #clear_output(wait=False)
@@ -188,22 +194,26 @@ def run_country(country):
 
 
     except:
-        print('error for ' , country,s)
-        raise Exception ('Stop everything')
+        print('error for ' ,country,s)
+        raise Exception ('error for ' , country,s)
     
     
 if __name__ == '__main__':
 
-    countries=['LUX', 'LVA', 'MLT', 'NLD', 'NOR', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'SWE']
-    #['AUT', 'BEL', 'BGR', 'CHE', 'CYP', 'CZE', 'DEU', 'DNK', 'ESP', 'EST', 'FIN', 'FRA',
-     #          'GBR', 'GRC', 'HUN', 'HRV', 'IRL', 'ISL', 'ITA', 'LTU', 'LUX', 'LVA', 'MLT', 'NLD',
-      #         'NOR', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'SWE']
+    countries=['AUT', 'BEL', 'BGR', 'CHE', 'CYP', 'CZE', 'DEU', 'DNK', 'ESP', 'EST', 'FIN', 'FRA','GBR', 'GRC', 'HUN', 'HRV', 'IRL', 'ISL', 'ITA', 'LTU', 'LUX', 'LVA', 'MLT', 'NLD',
+'NOR', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'SWE']
+
+
+
+
 
     pool=Pool(processes=4)
-    scenarios=pool.map_async(run_country, countries, chunksize=1)
-    while not scenarios.ready():
-        if not scenarios._success:
-            print('Exiting for failure')
-            pool.terminate()
-            pool.join()
-            break
+    scenarios=pool.map_async(run_country, countries, chunksize=1,error_callback=callback)
+    pool.close()
+    pool.join()
+    #while not scenarios.ready():
+     #   if not scenarios._success:
+ 	#	print('Exiting for failure')
+		# pool.terminate()
+		
+		#break
